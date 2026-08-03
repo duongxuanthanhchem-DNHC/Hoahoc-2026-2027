@@ -1,31 +1,19 @@
-# HoaHoc 2026-2027
+### Cập nhật README: hướng dẫn authentication & migration
 
-Skeleton Next.js (TypeScript) + Tailwind + Supabase scaffold for a learning website.
+Đã thêm:
+- pages/auth.tsx — trang đăng nhập / đăng ký mẫu dùng Supabase Auth
+- lib/supabaseClient.ts — client Supabase cho Next.js
+- db/schema.sql — SQL mẫu để tạo bảng Courses, Lessons, Quizzes, Profiles, v.v.
 
-## Thiết lập nhanh (local)
+Hướng dẫn nhanh sau khi đã có `NEXT_PUBLIC_SUPABASE_URL` và `NEXT_PUBLIC_SUPABASE_ANON_KEY`:
 
-1. Cài Node.js (v18+)
-2. Clone repo
+1. Chạy local:
+   npm install
+   npm run dev
 
-```bash
-git clone https://github.com/duongxuanthanhchem-DNHC/Hoahoc-2026-2027.git
-cd Hoahoc-2026-2027
-```
+2. Migrate schema vào Supabase
+- Mở SQL Editor trong Supabase dashboard của project → dán nội dung `db/schema.sql` → Run
 
-3. Cài phụ thuộc và chạy dev
+3. Truy cập http://localhost:3000/auth để thử đăng ký / đăng nhập
 
-```bash
-npm install
-npm run dev
-```
-
-4. Thiết lập Supabase
-- Tạo project Supabase, lấy `SUPABASE_URL` và `SUPABASE_ANON_KEY`.
-- Tạo file `.env.local` theo `.env.example`.
-
-5. Triển khai
-- Đăng ký Vercel và connect repo, đặt biến môi trường từ Supabase.
-
----
-
-Nếu bạn muốn, mình sẽ tiếp tục thêm: authentication flow (Supabase Auth), CRUD lessons, quiz model, admin UI.
+Bạn muốn mình tiếp tục với: (1) CRUD pages cho lessons & courses, (2) Admin dashboard, (3) CI build action? Trả lời số thứ tự hoặc mô tả.
